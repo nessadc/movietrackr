@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+      integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>MovieTrackr</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="four columns"><h4>MovieTrackr</h4></div>
+      </div>
+      <!-- stop reloading on enter -->
+      <form onSubmit="return false;">
+        <div class="row">
+          <div class="eight columns">
+            <label for="m-search">Search for a movie...</label>
+            <input
+              class="u-full-width"
+              type="text"
+              id="m-search-bar"
+              placeholder="Terminator 2: Judgement Day"
+            />
+          </div>
+        </div>
+      </form>
+      <div id="results">
+        <h2 id="m-name"></h2>
+      </div>
+    </div>
+
+    <script src="ui.js"></script>
+    <script src="movies.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
