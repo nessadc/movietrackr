@@ -2,6 +2,7 @@ class UI {
   constructor() {
     this.name = document.getElementById('m-name');
     this.results = document.getElementById('results');
+    this.watchTable = document.getElementById('watchlist-table').getElementsByTagName('tbody')[0];
   }
 
   paint(results) {

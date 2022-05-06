@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
@@ -11,18 +18,39 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="css/custom.css" />
     <title>MovieTrackr</title>
   </head>
   <body>
+    <!-- navigation -->
     <div class="container">
       <div class="row">
         <div class="four columns"><h4>MovieTrackr</h4></div>
       </div>
-      <!-- stop reloading on enter -->
+      <div class="navbar-spacer"></div>
+      <nav class="navbar">
+        <div class="">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="#search" class="navbar-link">Search</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#watchlist" class="navbar-link">Lists</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <br />
+
+    <!-- search -->
+    <div id="search" class="container">
       <form onSubmit="return false;">
         <div class="row">
           <div class="eight columns">
-            <label for="m-search">Search for a movie...</label>
+            <h4>Search Movies</h4>
+            <label for="m-search" class="form-label">Enter a movie name:</label>
             <input
               class="u-full-width"
               type="text"
@@ -32,11 +60,39 @@
           </div>
         </div>
       </form>
-      <div id="results">
-        <h2 id="m-name"></h2>
-      </div>
+      <!-- results -->
+      <div id="results"></div>
+      <hr />
     </div>
 
+    <!-- watch list -->
+    <div id="watchlist" class="container">
+      <h4>Movies to Watch</h4>
+      <table id="watchlist-table" class="u-full-width">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Year Made</th>
+            <th>Date Watched</th>
+            <th>Personal Rating</th>
+            <th>IMDB Rating</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody id="watchlist-table-body">
+          <tr>
+            <td>Mad Max</td>
+            <td>2015</td>
+            <td>04/02/2022</td>
+            <td>7.5</td>
+            <td>7.0</td>
+            <td>Great</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="storage.js"></script>
     <script src="ui.js"></script>
     <script src="movies.js"></script>
     <script src="app.js"></script>

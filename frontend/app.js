@@ -1,3 +1,4 @@
+const storage = new Storage();
 const movies = new Movies();
 const ui = new UI();
 
@@ -27,7 +28,6 @@ document.getElementById('results').addEventListener('click', (e) => {
       let movie = e.target.textContent;
       movies.getDetails(movie)
         .then(details => {
-          console.log(details);
           ui.showMovieDetails(e.target, details);
         })
         .catch(err => console.log(err));
@@ -36,8 +36,14 @@ document.getElementById('results').addEventListener('click', (e) => {
   e.preventDefault();
 });
 
-document.getElementById('results').addEventListener('click', (e) =>{
+document.getElementById('results').addEventListener('mousedown', (e) =>{
   if(e.target && e.target.id === 'add-to-list'){
-    alert('foo');
+    let movie = e.target.parentElement.parentElement.children[0].children[0].innerText;
+    movies.getDetails(movie)
+      .then(details => {
+        storage.addToList(details);
+      })
+
   }
+  e.preventDefault();
 });
