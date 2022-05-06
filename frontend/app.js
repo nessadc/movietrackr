@@ -36,14 +36,19 @@ document.getElementById('results').addEventListener('click', (e) => {
   e.preventDefault();
 });
 
-document.getElementById('results').addEventListener('mousedown', (e) =>{
+document.getElementById('results').addEventListener('mousedown', (e) => {
   if(e.target && e.target.id === 'add-to-list'){
     let movie = e.target.parentElement.parentElement.children[0].children[0].innerText;
     movies.getDetails(movie)
       .then(details => {
         storage.addToList(details);
+        ui.addMovieRow(details);
       })
 
   }
   e.preventDefault();
+});
+
+document.addEventListener("DOMContentLoaded",() => {
+  ui.paintList();
 });

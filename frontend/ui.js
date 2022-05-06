@@ -25,6 +25,28 @@ class UI {
     this.results.innerHTML = output;
   }
 
+  paintList() {
+    let movies = storage.getMovies();
+    movies.forEach((movie) => {
+      this.addMovieRow(movie);
+    });
+  }
+
+  addMovieRow(movie) {
+    console.log(movie);
+    let newRow = this.watchTable.insertRow(this.watchTable.rows.length);
+    let release_year = new Date(movie.release_date).getFullYear();
+    newRow.innerHTML = `
+      <td>${movie.title}</td>
+      <td>${release_year}</td>
+      <td></td>
+      <td></td>
+      <td>${movie.vote_average}</td>
+      <td></td>
+    ` 
+    return newRow;
+  }
+
   clearSearch() {
     this.results.innerHTML = '';
   }
