@@ -49,6 +49,14 @@ document.getElementById('results').addEventListener('mousedown', (e) => {
   e.preventDefault();
 });
 
-document.addEventListener("DOMContentLoaded",() => {
+document.getElementById('watchlist-table').addEventListener('click', (e) => {
+  if(e.target && e.target.id === 'delete-icon'){
+    let row = e.target.parentElement.parentElement;
+    let movieName = row.children[1].textContent;
+    ui.deleteMovieRow(movieName);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   ui.paintList();
 });

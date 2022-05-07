@@ -15,4 +15,10 @@ class Storage {
     movies.push(movie);
     localStorage.setItem('movies', JSON.stringify(movies));
   }
+
+  deleteFromList(movieName) {
+    let movies = this.getMovies();
+    const result = movies.filter(movie => movie['title'] !== movieName);
+    localStorage.setItem('movies', JSON.stringify(result));
+  }
 }

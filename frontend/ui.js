@@ -27,16 +27,17 @@ class UI {
 
   paintList() {
     let movies = storage.getMovies();
+    this.watchTable.innerHTML = '';
     movies.forEach((movie) => {
       this.addMovieRow(movie);
     });
   }
 
   addMovieRow(movie) {
-    console.log(movie);
     let newRow = this.watchTable.insertRow(this.watchTable.rows.length);
     let release_year = new Date(movie.release_date).getFullYear();
     newRow.innerHTML = `
+      <td><i id="delete-icon" class="fa-solid fa-trash"></i></td>
       <td>${movie.title}</td>
       <td>${release_year}</td>
       <td></td>
@@ -45,6 +46,11 @@ class UI {
       <td></td>
     ` 
     return newRow;
+  }
+
+  deleteMovieRow(movieName) {
+    storage.deleteFromList(movieName);
+    this.paintList();
   }
 
   clearSearch() {

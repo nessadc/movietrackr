@@ -18,15 +18,25 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link rel="stylesheet" href="css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/ceaf74274c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>MovieTrackr</title>
   </head>
   <body>
     <!-- navigation -->
     <div class="container">
       <div class="row">
-        <div class="four columns"><h4>MovieTrackr</h4></div>
+        <div class="four columns"><h3>MovieTrackr</h3></div>
       </div>
       <div class="navbar-spacer"></div>
       <nav class="navbar">
@@ -43,7 +53,6 @@
       </nav>
     </div>
     <br />
-
     <!-- search -->
     <div id="search" class="container">
       <form onSubmit="return false;">
@@ -71,6 +80,7 @@
       <table id="watchlist-table" class="u-full-width">
         <thead>
           <tr>
+            <th></th>
             <th>Name</th>
             <th>Year Made</th>
             <th>Date Watched</th>
