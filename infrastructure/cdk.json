@@ -1,0 +1,12 @@
+{
+    "app": "python3 app.py",
+    "context": {
+        "namespace": "movietrackr",
+        "domain_name": "movietrackr.nessadc.com",
+        "enable_s3_website_endpoint": true,
+        "origin_custom_header_parameter_name": "/prod/movietrackr/origin-custom-header/referer",
+        "source": "../frontend",
+        "hosted_zone_id": "Z2XOUYGJL2SNS2",
+        "hosted_zone_name": "nessadc.com"
+    }
+}
